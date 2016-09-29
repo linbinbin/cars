@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block body %}
+	<!-- [ CONTAINER ] -->
+	<div id="container" class="group">
+	<!-- [ BLOCK BUTTONS ] -->
+	<div id="blockButtons">
+
+	<div id="stickArea">
+	<div id="stick" class="touchButton"></div>
+	<!-- /#stickArea --></div>
+
+	<div id="ABbuttonArea">
+	<div id="Abutton" class="touchButton"></div>
+	<div id="Bbutton" class="touchButton"></div>
+	<!-- /#ABbuttonArea --></div>
+
+	<div id="startButton" class="touchButton"></div> 
+
+	<!-- /#blockButtons --></div>
+	<!-- / [ BLOCK BUTTONS ] -->
+
+
+	<!-- /#container --></div> 
+	<!-- / [ CONTAINER ] -->
+
+	<script type="text/javascript" src="{{ url_for('static', filename='js/lib/jquery.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/lib/jquery_binary.js') }}"></script>	
+	<script type="text/javascript" src="{{ url_for('static', filename='js/main.js') }}"></script>
+	<div id="messageblock">
+		<textarea id="chat" cols="80" rows="3"></textarea><br><br>
+	</div>
+{% endblock %}

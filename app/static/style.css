@@ -1,0 +1,255 @@
+@charset "UTF-8";
+/*
+	file: /css/common.css
+*/
+
+/* //////////////////////////////////////////////////
+[Base] 
+////////////////////////////////////////////////// */
+
+/* --------------------------------------------------
+	Resetting default margin and padding
+-------------------------------------------------- */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* --------------------------------------------------
+	HTML, Body, Anchor
+-------------------------------------------------- */
+html {
+	overflow-y: scroll;
+	height: 100% !important;
+}
+body {
+	height: 100%;
+	color: black;
+    font-family: Myriad, Helvetica, Arial, "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ ProN W3", sans-serif;
+	font-size: 13px;
+	line-height: 1.5;	
+    word-break: break-all;
+}
+a, h1, h2       { color: #377BA8; }
+h1, h2          { font-family: 'Georgia', serif; margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+/* --------------------------------------------------
+	List
+-------------------------------------------------- */
+li { list-style: none; }
+
+/* --------------------------------------------------
+	Other
+-------------------------------------------------- */
+img {
+	border: none;
+	vertical-align: top;
+	-ms-interpolation-mode: bicubic;
+	image-rendering: optimizeQuality;
+    user-drag: none;
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+}
+em, strong {
+	font-weight: bold;
+	font-style: normal;
+}
+
+.flash          { background: #CEE5F5; padding: 0.5em;
+                  border: 1px solid #AACBE2; }
+.error          { background: #F0D6D6; padding: 0.5em; }
+
+/* ------------------------------------------------------------
+	Other
+------------------------------------------------------------ */
+.group:after {
+	content : '';
+	display : block;
+	clear : both;
+	height: 0;
+}
+.group {
+  *zoom: 1;
+}
+#msgNoScript {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 0;
+    background: rgba(255,0,0,0.8);
+    color: white;
+    text-align: center;    
+}
+
+/* //////////////////////////////////////////////////
+[LAYOUT] 
+////////////////////////////////////////////////// */
+
+/* --------------------------------------------------
+	container
+-------------------------------------------------- */
+body {
+    background: #1d2627;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+#container {
+    position: relative;
+    overflow: hidden;
+    height: 270px;
+    min-height: 100%;
+}
+@media only screen and (max-width : 400px) {
+    #container {
+        height: 415px;
+    }
+}
+
+/* --------------------------------------------------
+	blockButtons
+-------------------------------------------------- */
+#blockButtons {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 270px;    
+    background: url(img/bg.png);
+    border: solid 4px #ececee;
+    border-radius: 12px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+#blockButtons > * {
+    position: absolute;
+}
+#siteName {
+    bottom: 215px;
+    left: 50%;
+}
+.touchButton {
+    overflow: hidden;
+}
+@media only screen and (max-width : 400px) {
+    #blockButtons {
+        height: 415px;
+    }
+    #siteName {
+        bottom: 375px;
+        left: 15px;
+    }    
+}
+
+/* --------------------------------------------------
+	stickArea
+-------------------------------------------------- */ 
+#stickArea {
+    z-index: 5;
+    bottom: 40px;
+    left: 15px;
+    width: 208px;
+    height: 208px;
+    background: url(img/stickArea.png) no-repeat;
+    background-size: 208px auto;
+}
+#stick {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 159px;
+    height: 159px;
+    margin: -75px 0 0 -80px;
+    background: url(img/stick.png) no-repeat;
+    background-size: 159px auto;
+    -webkit-transform: translate3d(0,0,0);
+}
+#stick.touched {
+    background-position: 0 -175px;
+}
+@media only screen and (max-width : 400px) {
+    #stickArea {
+        left: 50%;
+        bottom: 12px;
+        margin-left: -104px;
+    }
+}
+
+/* --------------------------------------------------
+	ABbuttonArea
+-------------------------------------------------- */ 
+#ABbuttonArea {
+    bottom: 5px;
+    right: 5px;
+    width: 208px;
+    height: 253px;
+    background: url(img/ABbuttonArea.png) no-repeat;
+    background-size: 208px auto;
+}
+#ABbuttonArea > * {
+    position: absolute;
+    width: 118px;
+    height: 118px;
+    -webkit-transform: translate3d(0,0,0);    
+    background-repeat: no-repeat;
+    background-size: 118px auto;
+}
+#Abutton {
+    top: 14px;
+    left: 77px;
+    background-image: url(img/Abutton.png);
+}
+#Bbutton {
+    top: 120px;
+    left: 14px;
+    background-image: url(img/Bbutton.png);
+}
+#ABbuttonArea > *.touched {
+    background-position: 0 -125px;
+}
+@media only screen and (max-width : 400px) {
+    #ABbuttonArea {
+        bottom: auto;
+        top: 32px;
+        right: 50%;
+        width: 283px;
+        height: 146px;
+        margin-right: -141px;
+        background: url(img/ABbuttonArea2.png) no-repeat;
+        background-size: 283px auto;        
+    }
+    #ABbuttonArea > * {
+        top: 15px;
+    }
+    #Abutton {
+        left: 15px;
+    }
+    #Bbutton {
+        left: 150px;
+    }
+}
+
+/* --------------------------------------------------
+	startButton
+-------------------------------------------------- */ 
+#startButton {
+    bottom: 7px;
+    left: 10px;
+    width: 79px;
+    height: 30px;
+    background: url(img/startButton.png) no-repeat;
+    background-size: 79px auto;
+}
+#startButton.touched {
+    background-position: 0 -49px;
+}
+@media only screen and (max-width : 400px) {
+    #startButton {
+        left: auto;
+        right: 5px;
+        bottom: 5px;
+    }
+}
