@@ -1,7 +1,7 @@
-Flask-SocketIO-Chat
+Flask-SocketIO-Chat & flsk_fullrest api
 ===================
 
-A simple chat application that demonstrates how to structure a Flask-SocketIO application.
+A simple REST application with chat function by Flask-SocketIO application.
 
 To run this application install the requirements in a virtual environment, run `python chat.py` and visit `http://localhost:5000` on one or more browser tabs.
 
