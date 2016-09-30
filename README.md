@@ -1,4 +1,4 @@
-Flask-SocketIO-Chat & flsk_fullrest api
+Flask-SocketIO-Chat & flask_fullrest api
 ===================
 
 A simple REST application with chat function by Flask-SocketIO application.
