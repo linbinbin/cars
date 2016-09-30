@@ -1,10 +1,7 @@
 from flask import Flask
 from flask_socketio import SocketIO
 from flask_restful import Resource, Api
-
 socketio = SocketIO()
-
-
 def create_app(debug=False):
     """Create an application."""
     app = Flask(__name__)
@@ -13,6 +10,6 @@ def create_app(debug=False):
 
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
-    Api(app).add_resource(main.car.controller,'/controller')
+    Api(app).add_resource(main.controllapi.Controller,'/controller')
     socketio.init_app(app)
     return app

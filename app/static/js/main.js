@@ -208,20 +208,17 @@
         },
 
         imgTimer: function() {
-            var $img = $('#mystream');
+            var $txt = $('#gchat');
             var tm = setInterval(function() {
                 $.ajax({
                     url: '/controller',
                     type: "GET",
-                    dataType: 'binary',
-                    headers:{'Content-Type':'image/jpeg','X-Requested-With':'XMLHttpRequest'},
-                    processData: false
-                }).done(function(data, textStatus, jqXHR) {
-                        window.console.log("timer function ");
-                        var urlCreator = window.URL || window.webkitURL;
-                        var imageUrl = urlCreator.createObjectURL(data);
-                        $img.attr('src', imageUrl);
-                    });
+                    dataType: 'json',
+                    success: function(json) {
+                        window.console.log("get timer function!");
+                        $txt.val(json);                        
+                    }
+                });
             }, 1000);   
         },
 
@@ -235,6 +232,20 @@
             self.buttonEvt();
             self.stickEvt();
             self.imgTimer();
+            //websocket io login
+            self.webSocket = io.connect('http://' + document.domain + ':' + location.port + '/');
+            self.webSocket.on('connect', function() {
+                self.webSocket.emit('joined', {});
+            });
+            self.webSocket.on('status', function(data) {
+                $('#chat').val($('#chat').val() + '<' + data.msg + '>\n');
+                $('#chat').scrollTop($('#chat')[0].scrollHeight);
+            });
+            self.webSocket.on('message', function(data) {
+                window.console.log("websocket function ");  
+                $('#chat').val($('#chat').val() + data.msg + '\n');
+                $('#chat').scrollTop($('#chat')[0].scrollHeight);
+            });             
         }
     };
 
