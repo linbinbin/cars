@@ -216,7 +216,7 @@
                     dataType: 'json',
                     success: function(json) {
                         window.console.log("get timer function!");
-                        $txt.val(json);                        
+                        $txt.val(json["Get"]);                        
                     }
                 });
             }, 1000);   

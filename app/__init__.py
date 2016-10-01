@@ -2,6 +2,7 @@ from flask import Flask
 from flask_socketio import SocketIO
 from flask_restful import Resource, Api
 socketio = SocketIO()
+counter = 0
 def create_app(debug=False):
     """Create an application."""
     app = Flask(__name__)
